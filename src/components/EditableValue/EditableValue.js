@@ -13,13 +13,16 @@ export default class EditableValue extends Component {
 
   componentDidMount() {
     // try to get stored value
-
-    const storedVal = localStorage.getItem(`cpj:${this.props.inputClassifier}`);
-    if (storedVal !== null) {
-      if (!this.props.isSelect) {
-        this.setState({ inputValue: storedVal });
-      } else {
-        this.setState({ selectValue: storedVal });
+    if (this.props.save !== false) {
+      const storedVal = localStorage.getItem(
+        `cpj:${this.props.inputClassifier}`
+      );
+      if (storedVal !== null) {
+        if (!this.props.isSelect) {
+          this.setState({ inputValue: storedVal });
+        } else {
+          this.setState({ selectValue: storedVal });
+        }
       }
     }
   }
@@ -111,16 +114,24 @@ export default class EditableValue extends Component {
   inputValueChanged(e) {
     const val = e.target.value;
 
-    localStorage.setItem(`cpj:${this.props.inputClassifier}`, val);
     this.setState({ inputValue: val });
+
+    if (this.props.save !== false) {
+      localStorage.setItem(`cpj:${this.props.inputClassifier}`, val);
+    }
+
     return;
   }
 
   // functoin that fires on select change
   selectChanged(e) {
     const val = e.target.value;
+
     this.setState({ selectValue: val });
-    localStorage.setItem(`cpj:${this.props.inputClassifier}`, val);
+
+    if (this.props.save !== false) {
+      localStorage.setItem(`cpj:${this.props.inputClassifier}`, val);
+    }
   }
 
   // unfocus input when user hits enter
