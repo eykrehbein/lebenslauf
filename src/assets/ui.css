@@ -1,0 +1,320 @@
+@font-face {
+  src: url("fonts/HKGrotesk-Light.ttf");
+  font-family: "HKGrotesk";
+  font-weight: 300;
+}
+@font-face {
+  src: url("fonts/HKGrotesk-Regular.ttf");
+  font-family: "HKGrotesk";
+  font-weight: 400;
+}
+@font-face {
+  src: url("fonts/HKGrotesk-Medium.ttf");
+  font-family: "HKGrotesk";
+  font-weight: 500;
+}
+@font-face {
+  src: url("fonts/HKGrotesk-SemiBold.ttf");
+  font-family: "HKGrotesk";
+  font-weight: 600;
+}
+@font-face {
+  src: url("fonts/HKGrotesk-Bold.ttf");
+  font-family: "HKGrotesk";
+  font-weight: 700;
+}
+@font-face {
+  src: url("fonts/HKGrotesk-ExtraBold.ttf");
+  font-family: "HKGrotesk";
+  font-weight: 800;
+}
+@font-face {
+  src: url("fonts/HKGrotesk-Black.ttf");
+  font-family: "HKGrotesk";
+  font-weight: 900;
+}
+@font-face {
+  src: url("fonts/HKGrotesk-LightItalic.ttf");
+  font-family: "HKGrotesk";
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  src: url("fonts/HKGrotesk-Italic.ttf");
+  font-family: "HKGrotesk";
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  src: url("fonts/HKGrotesk-MediumItalic.ttf");
+  font-family: "HKGrotesk";
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  src: url("fonts/HKGrotesk-SemiBoldItalic.ttf");
+  font-family: "HKGrotesk";
+  font-weight: 600;
+  font-style: italic;
+}
+@font-face {
+  src: url("fonts/HKGrotesk-BoldItalic.ttf");
+  font-family: "HKGrotesk";
+  font-weight: 700;
+  font-style: italic;
+}
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px;
+  flex-basis: 100%;
+  flex: 1 0 10px;
+}
+
+.grid.v-top {
+  align-items: flex-start;
+}
+
+.grid.v-center {
+  align-items: center;
+}
+
+.grid.v-bottom {
+  align-items: flex-end;
+}
+
+.grid.v-stretch {
+  align-items: stretch;
+}
+
+.grid.v-baseline {
+  align-items: baseline;
+}
+
+.grid.h-left {
+  justify-content: flex-start;
+}
+
+.grid.h-center {
+  justify-content: center;
+}
+
+.grid.h-right {
+  justify-content: flex-end;
+}
+
+.grid.h-space-between {
+  justify-content: space-between;
+}
+
+.grid.h-space-around {
+  justify-content: space-around;
+}
+
+.cell {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  margin: 5px;
+}
+
+.cell.is-full {
+  width: 0;
+  min-width: 0;
+  flex-grow: 1;
+}
+
+.cell.is-1 {
+  width: calc((100% * 1 / 12) - 5px - 5px);
+}
+
+.cell.is-2 {
+  width: calc((100% * 2 / 12) - 5px - 5px);
+}
+
+.cell.is-3 {
+  width: calc((100% * 3 / 12) - 5px - 5px);
+}
+
+.cell.is-4 {
+  width: calc((100% * 4 / 12) - 5px - 5px);
+}
+
+.cell.is-5 {
+  width: calc((100% * 5 / 12) - 5px - 5px);
+}
+
+.cell.is-6,
+.cell.is-half {
+  width: calc((100% * 6 / 12) - 5px - 5px);
+}
+
+.cell.is-7 {
+  width: calc((100% * 7 / 12) - 5px - 5px);
+}
+
+.cell.is-8 {
+  width: calc((100% * 8 / 12) - 5px - 5px);
+}
+
+.cell.is-9 {
+  width: calc((100% * 9 / 12) - 5px - 5px);
+}
+
+.cell.is-10 {
+  width: calc((100% * 10 / 12) - 5px - 5px);
+}
+
+.cell.is-11 {
+  width: calc((100% * 11 / 12) - 5px - 5px);
+}
+
+.cell.is-12 {
+  width: 100%;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "HKGrotesk", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  display: flex;
+  flex-direction: column;
+  color: #050f19;
+  background-color: white;
+  overflow-x: hidden;
+}
+
+hr {
+  border-top: 1px solid #eceff1;
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 600;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.button {
+  width: auto;
+  height: auto;
+  padding: 12px 18px;
+  font-size: 14px;
+  border: 1px solid;
+  transition: all 80ms ease-in-out 0s;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+}
+.button:hover {
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button.is-primary {
+  background-color: #1652f0;
+  color: white;
+  border-color: #1652f0;
+}
+.button.is-primary:hover {
+  background-color: #0f49e3;
+}
+
+.button.is-success {
+  background-color: #05b169;
+  border-color: #05b169;
+  color: white;
+}
+.button.is-success:hover {
+  background-color: #049d5d;
+}
+
+.button.is-warning {
+  background-color: #f4c622;
+  border-color: #f4c622;
+  color: white;
+}
+.button.is-warning:hover {
+  background-color: #f3c10f;
+}
+
+.button.is-dark {
+  background-color: #050f19;
+  border-color: #050f19;
+  color: white;
+}
+.button.is-dark:hover {
+  background-color: #020508;
+}
+
+.button.is-light {
+  background-color: #bfe9ff;
+  color: #050f19;
+  border-color: #bfe9ff;
+}
+.button.is-light:hover {
+  background-color: #abe2ff;
+}
+
+.button.is-small {
+  padding: 10px 14px;
+  font-size: 12px;
+}
+
+.button.is-large {
+  padding: 14px 20px;
+  font-size: 16px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background-color: white;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #eceff1;
+  border-radius: 4px;
+  border-image: initial;
+  width: 100%;
+  box-shadow: rgba(17, 51, 83, 0.02) 0px 4px 12px 0px;
+}
+
+.card-header {
+  height: 55px;
+  width: 100%;
+  border-bottom: 1px solid #eceff1;
+  box-sizing: border-box;
+  display: flex;
+  padding: 0px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.card-body {
+  padding: 24px;
+}
+
+/*# sourceMappingURL=main.css.map */
