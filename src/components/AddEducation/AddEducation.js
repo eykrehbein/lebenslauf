@@ -4,10 +4,10 @@ import './AddEducation.scss';
 
 export default props => (
   <div className="addEducation">
-    <div className="text">Du hast noch keine Ausbildung hinzugefügt.</div>
+    <div className="text">{props.title}</div>
     <div className="addButton">
       <button
-        className="button is-small is-success"
+        className="button is-small is-primary"
         onClick={props.clickHandler}
       >
         Ausbildung hinzufügen
