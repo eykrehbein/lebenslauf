@@ -25,7 +25,7 @@ export default class SkillsInput extends Component {
 
   render() {
     return (
-      <div class="editableValue">
+      <div className="editableValue">
         <form className="input" onSubmit={this.formSubmit.bind(this)}>
           <input
             placeholder={this.props.placeholder}

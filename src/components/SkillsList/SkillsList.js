@@ -4,7 +4,7 @@ import './SkillsList.scss';
 import SkillItem from '../SkillItem/SkillItem';
 
 export default props => (
-  <div class="skillsList">
+  <div className="skillsList">
     {props.skills.map((skill, index) => (
       <SkillItem
         value={skill}
