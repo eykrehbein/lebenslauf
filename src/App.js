@@ -421,22 +421,22 @@ export default class AppComponent extends Component {
           <Card title="Über mich" splitContent="no">
             <EditableValue
               label="Name"
-              defaultValue="Eyk Rehbein"
+              defaultValue=""
               inputClassifier="name"
             />
             <EditableValue
               label="Email Adresse"
-              defaultValue="eykrehbein@gmail.com"
+              defaultValue=""
               inputClassifier="email"
             />
             <EditableValue
               label="Github Profil"
-              defaultValue="eykrehbein"
+              defaultValue=""
               inputClassifier="github"
             />
             <EditableValue
               label="Geburtstag"
-              defaultValue="19.11.2019"
+              defaultValue=""
               inputClassifier="birthday"
               isDatePicker={true}
             />
