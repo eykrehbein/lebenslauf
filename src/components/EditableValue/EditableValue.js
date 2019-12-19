@@ -6,15 +6,21 @@ export default class EditableValue extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      inputValue: this.props.defaultValue || ''
+      inputValue: this.props.defaultValue || '',
+      selectValue: this.props.defaultSelectValue || '0'
     };
   }
 
   componentDidMount() {
     // try to get stored value
+
     const storedVal = localStorage.getItem(`cpj:${this.props.inputClassifier}`);
     if (storedVal !== null) {
-      this.setState({ inputValue: storedVal });
+      if (!this.props.isSelect) {
+        this.setState({ inputValue: storedVal });
+      } else {
+        this.setState({ selectValue: storedVal });
+      }
     }
   }
 
@@ -110,6 +116,13 @@ export default class EditableValue extends Component {
     return;
   }
 
+  // functoin that fires on select change
+  selectChanged(e) {
+    const val = e.target.value;
+    this.setState({ selectValue: val });
+    localStorage.setItem(`cpj:${this.props.inputClassifier}`, val);
+  }
+
   // unfocus input when user hits enter
   formSubmit(e) {
     e.preventDefault();
@@ -120,11 +133,23 @@ export default class EditableValue extends Component {
     return (
       <div className="editableValue">
         <div className="label">{this.props.label}</div>
+
         <form className="input" onSubmit={this.formSubmit.bind(this)}>
+          {this.props.isSelect ? (
+            <div className="selectOverlay">
+              <select
+                value={this.state.selectValue}
+                onChange={this.selectChanged.bind(this)}
+              >
+                {this.props.children}
+              </select>
+            </div>
+          ) : null}
           <input
             value={this.state.inputValue}
             onChange={this.inputValueChanged.bind(this)}
             onKeyPress={this.inputKeyPressed.bind(this)}
+            placeholder={this.props.placeholder}
           ></input>
           <div className="editIcon">
             <i

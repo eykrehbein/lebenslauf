@@ -13,6 +13,36 @@
     padding-left: 16px;
     display: flex;
     flex-direction: row;
+    position: relative;
+    .selectOverlay {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0px;
+      box-sizing: border-box;
+      background-color: transparent;
+      select {
+        width: 98%;
+        border: none;
+        height: 100%;
+        background-color: transparent;
+        font-size: 16px;
+        color: rgba(0, 0, 0, 0.5);
+        outline: none;
+        background-image: none;
+        &::-ms-expand {
+          display: none;
+        }
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        text-indent: 16px;
+        text-overflow: '';
+      }
+      select::-ms-expand {
+        display: none;
+      }
+    }
     input {
       height: 100%;
       width: 100%;
@@ -24,6 +54,9 @@
       border-image: initial;
       outline: none;
       color: rgba(0, 0, 0, 0.5);
+      &::placeholder {
+        color: rgba(0, 0, 0, 0.5);
+      }
       &:focus {
         color: black;
       }
