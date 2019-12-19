@@ -1,0 +1,18 @@
+.peItem {
+  margin-top: 10px;
+  .card-header {
+    .peTitle {
+      font-weight: 500;
+    }
+    .editIcon {
+      color: rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
+  }
+  .card-body {
+    padding-top: 15px !important;
+    .row {
+      padding-bottom: 10px;
+    }
+  }
+}

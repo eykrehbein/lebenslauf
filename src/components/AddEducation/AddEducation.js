@@ -10,7 +10,7 @@ export default props => (
         className="button is-small is-primary"
         onClick={props.clickHandler}
       >
-        Ausbildung hinzufügen
+        {props.buttonText}
       </button>
     </div>
   </div>
