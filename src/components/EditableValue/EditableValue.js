@@ -31,11 +31,17 @@ export default class EditableValue extends Component {
     this.setState({ inputValue: val });
   }
 
+  // unfocus input when user hits enter
+  formSubmit(e) {
+    e.preventDefault();
+    e.target.querySelector('input').blur();
+  }
+
   render() {
     return (
       <div className="editableValue">
         <div className="label">{this.props.label}</div>
-        <div className="input">
+        <form className="input" onSubmit={this.formSubmit.bind(this)}>
           <input
             value={this.state.inputValue}
             onChange={this.inputValueChanged.bind(this)}
@@ -46,7 +52,7 @@ export default class EditableValue extends Component {
               onClick={this.focusParentInput.bind(this)}
             ></i>
           </div>
-        </div>
+        </form>
       </div>
     );
   }
