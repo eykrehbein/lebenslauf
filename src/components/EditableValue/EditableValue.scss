@@ -1,2 +1,37 @@
 .editableValue {
+  padding-bottom: 10px;
+  .label {
+    font-size: 14px;
+    font-weight: 500;
+    padding-bottom: 5px;
+  }
+  .input {
+    border: 1px solid rgb(236, 239, 241);
+    border-radius: 4px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 16px;
+    display: flex;
+    flex-direction: row;
+    input {
+      height: 100%;
+      width: 100%;
+      box-sizing: border-box;
+      font-size: 16px;
+      border-width: initial;
+      border-style: none;
+      border-color: initial;
+      border-image: initial;
+      outline: none;
+      color: rgba(0, 0, 0, 0.5);
+      &:focus {
+        color: black;
+      }
+    }
+    .editIcon {
+      margin-right: 15px;
+      color: rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
+  }
 }
