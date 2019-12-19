@@ -1,8 +1,19 @@
-import React from "react";
-import "./assets/ui.css";
+import React from 'react';
 
-function App() {
-  return <div className="App"></div>;
-}
+// import UI lib
+import './assets/ui.css';
 
-export default App;
+import RootContainer from './components/RootContainer/RootContainer';
+import Card from './components/Card/Card';
+
+export default () => (
+  <div className="app">
+    <RootContainer>
+      <div className="title">
+        <h1>Lebenslauf</h1>
+      </div>
+
+      <Card title="Profil" splitContent="yes"></Card>
+    </RootContainer>
+  </div>
+);

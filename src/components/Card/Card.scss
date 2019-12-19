@@ -1,0 +1,16 @@
+.card-component {
+  width: 100%;
+  .card {
+    .card-header {
+      .title {
+        font-weight: 600;
+        font-size: 20px;
+      }
+    }
+    .card-body.split-content {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+}
